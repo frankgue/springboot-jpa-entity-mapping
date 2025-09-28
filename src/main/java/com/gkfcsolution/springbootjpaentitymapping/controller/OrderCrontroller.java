@@ -3,6 +3,7 @@ package com.gkfcsolution.springbootjpaentitymapping.controller;
 import com.gkfcsolution.springbootjpaentitymapping.entity.Customer;
 import com.gkfcsolution.springbootjpaentitymapping.entity.dto.CustomerDto;
 import com.gkfcsolution.springbootjpaentitymapping.entity.dto.OrderRequest;
+import com.gkfcsolution.springbootjpaentitymapping.entity.dto.OrderResponse;
 import com.gkfcsolution.springbootjpaentitymapping.repository.CustomerRepository;
 import com.gkfcsolution.springbootjpaentitymapping.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,9 @@ public class OrderCrontroller {
     @GetMapping("/findAllOrders")
     public List<Customer> findAllOrders(){
         return customerRepository.findAll();
+    }
+    @GetMapping("/getInfo")
+    public List<OrderResponse> getJoinInformation(){
+        return customerRepository.getJoinInformation();
     }
 }
